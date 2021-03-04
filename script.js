@@ -19,6 +19,16 @@ document.forms.add.addEventListener("submit", (e) => {
   displayTable(people);
 });
 
+const sort = document.querySelector("div.container > button");
+
+sort.addEventListener("click", () => {
+  displayTable(
+    people
+      .sort((a, b) => (a.surname < b.surname ? -1 : 1))
+      .sort((a, b) => (a.name < b.name ? -1 : 1))
+  );
+});
+
 const filterInput = document.querySelector("div.container > input");
 
 filterInput.addEventListener("keyup", () => {
@@ -31,11 +41,11 @@ filterInput.addEventListener("keyup", () => {
   );
 });
 
-document
-  .querySelector("div.container > button:last-child")
-  .addEventListener("click", () => {
-    displayTable(people);
-  });
+const all = document.querySelector("div.container > button:last-child");
+
+all.addEventListener("click", () => {
+  displayTable(people);
+});
 
 function displayTable(array) {
   table.innerHTML = "";
