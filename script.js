@@ -19,7 +19,7 @@ document.forms.add.addEventListener("submit", (e) => {
   displayTable(people);
 });
 
-const filterInput = document.querySelector("div.container > input").value;
+const filterInput = document.querySelector("div.container > input");
 
 filterInput.addEventListener("keyup", () => {
   displayTable(
