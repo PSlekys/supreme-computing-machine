@@ -19,13 +19,13 @@ document.forms.add.addEventListener("submit", (e) => {
   displayTable(people);
 });
 
-document
-  .querySelector("div.container > button")
-  .addEventListener("click", () => {
-    displayTable(
-      people.filter((value) => value.name.toLowerCase() === "petras")
-    );
-  });
+const filterInput = document.querySelector("div.container > input").value;
+
+filterInput.addEventListener("keyup", () => {
+  displayTable(
+    people.filter((value) => value.name.includes(filterInput.value))
+  );
+});
 
 document
   .querySelector("div.container > button:last-child")
