@@ -23,7 +23,11 @@ const filterInput = document.querySelector("div.container > input");
 
 filterInput.addEventListener("keyup", () => {
   displayTable(
-    people.filter((value) => value.name.includes(filterInput.value))
+    people.filter((value) =>
+      (value.name + " " + value.surname)
+        .toLowerCase()
+        .includes(filterInput.value.toLowerCase())
+    )
   );
 });
 
