@@ -19,6 +19,20 @@ document.forms.add.addEventListener("submit", (e) => {
   displayTable(people);
 });
 
+document
+  .querySelector("div.container > button")
+  .addEventListener("click", () => {
+    displayTable(
+      people.filter((value) => value.name.toLowerCase() === "petras")
+    );
+  });
+
+document
+  .querySelector("div.container > button:last-child")
+  .addEventListener("click", () => {
+    displayTable(people);
+  });
+
 function displayTable(array) {
   table.innerHTML = "";
 
