@@ -16,13 +16,13 @@ document.forms.add.addEventListener("submit", (e) => {
 
   people.push(person);
 
-  displayTable();
+  displayTable(people);
 });
 
-function displayTable() {
+function displayTable(array) {
   table.innerHTML = "";
 
-  people.forEach((person) => {
+  array.forEach((person) => {
     const tr = table.insertRow();
 
     const td1 = tr.insertCell();
